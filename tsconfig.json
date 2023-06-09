@@ -1,0 +1,22 @@
+{
+    "include": [
+        "src"
+    ],
+    "compilerOptions": {
+        "declaration": true,
+        "target": "es5",
+        "module": "commonJS",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "outDir": "./dist",
+        "moduleResolution": "node",
+        "lib": [
+            "es2016",
+            "ES2017.Object",
+            "ESNext.AsyncIterable"
+        ],
+        "resolveJsonModule": true
+    }
+}

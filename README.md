@@ -1,11 +1,12 @@
 # PolyConfig
 
-a polyglot configuration library for node.js
+A polyglot configuration library for node.js
 
-bored of writing the same configuration code over and over again? PolyConf is here to help!
-you can use it to load configuration from various sources and mix them together with a priority order.
+<img src="./assets/PolyConfig.png" width="128" alt="PolyConfig"> 
 
-**Deep dive**
+> Bored of writing the same configuration code over and over again? __PolyConfig__ is here to help! you can use it to load configuration from various sources and mix them together with a priority order.
+
+## Deep dive
 
 *.env*
 ```env

@@ -2,12 +2,12 @@ import { PolyConfigError, TPolyConfigVar } from "..";
 import fs from 'fs';
 import yaml from 'js-yaml';
 
-function PolyConfigHandlerFile(vars: TPolyConfigVar, settings: { path?: string } = { path: '' }, formatter: (data: string) => Record<string, any>) {
+function PolyConfigHandlerFile(vars: TPolyConfigVar, settings: { path?: string } = { path: '' }, formatter: (data: string) => any) {
     if (!settings.path) {
         throw new PolyConfigError(`path is required for file provider`);
     }
     let fileRaw = '';
-    let fileConfig = {};
+    let fileConfig: any = {};
     try {
         fileRaw = fs.readFileSync(settings.path, 'utf8').toString();
     } catch (e) {

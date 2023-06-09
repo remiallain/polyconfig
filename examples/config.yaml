@@ -1,0 +1,5 @@
+server:
+  port: 80
+  headers:
+    x-powered-by: Yaml-Daddy
+  ping_response: up

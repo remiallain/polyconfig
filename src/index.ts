@@ -26,14 +26,14 @@ export interface TPolyConfigHandlerSettings {
 }
 
 export class PolyConfigError extends Error {
-    constructor(message) {
+    constructor(message: string) {
         super(message);
         this.name = "PolyConfigError";
     }
 }
 
 export class PolyConfig {
-    private handlerStore: TPolyConfigHandlerStore;
+    private handlerStore: TPolyConfigHandlerStore = {};
     private handlers: TPolyConfigHandlerSettings[] = [];
     private config: any = {};
     public vars: TPolyConfigVar = {};
@@ -82,20 +82,21 @@ export class PolyConfig {
     }
 
     public load(): PolyConfig {
-        let handlers = _.sortBy(this.handlers, ['priority']);
-        let config = {};
+        let handlers: Record<string, any>[] = _.sortBy(this.handlers, ['priority']);
+        let config: Record<string, any> = {};
 
         // load default values
         for (let key in this.vars) {
             if (this.vars[key].default) {
-                config[key] = this.vars[key].default;
+                _.set(config, key, this.vars[key].default)
             }
         }
 
         // load values from handlers
-        for (let handler of handlers) {
+        for (let handler of handlers.sort((a, b) => b.priority - a.priority)) {
             let parser = this.handlerStore[handler.id];
             config = _.merge(config, parser(this.vars, handler.settings));
+            console.log(handler, config);
         }
 
         // require values

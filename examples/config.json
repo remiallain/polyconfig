@@ -1,0 +1,7 @@
+{
+    "server": {
+        "headers": {
+            "X-Endpoint-Id": "1234567890abcdef"
+        }
+    }
+}

@@ -96,7 +96,6 @@ export class PolyConfig {
         for (let handler of handlers.sort((a, b) => b.priority - a.priority)) {
             let parser = this.handlerStore[handler.id];
             config = _.merge(config, parser(this.vars, handler.settings));
-            console.log(handler, config);
         }
 
         // require values

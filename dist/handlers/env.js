@@ -11,10 +11,10 @@ function PolyConfigHandlerEnv(vars, settings) {
     var prefix = '';
     var envConfig = {};
     if (settings.prefix) {
-        prefix = settings.prefix.toUpperCase() + '_';
+        prefix = settings.prefix + '_';
     }
     for (var key in vars) {
-        var keyEnv = key.split('.').join('_').toUpperCase();
+        var keyEnv = key.split('.').join('_');
         if (process_1.default.env[prefix + keyEnv]) {
             lodash_1.default.set(envConfig, key, vars[key].type(process_1.default.env[prefix + keyEnv]));
         }

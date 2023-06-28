@@ -94,7 +94,6 @@ var PolyConfig = /** @class */ (function () {
             var handler = _a[_i];
             var parser = this.handlerStore[handler.id];
             config = lodash_1.default.merge(config, parser(this.vars, handler.settings));
-            console.log(handler, config);
         }
         // require values
         if (this.requireOnLoad) {

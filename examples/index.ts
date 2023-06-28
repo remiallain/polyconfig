@@ -7,6 +7,7 @@ let config = new PolyConfig()
     .from('json', 3, {path: __dirname + '/config.json'})
     .require('server.port', Number)
     .optional('server.headers', () => isObject, {})
+    .require('cooldownDuration', Number)
 
 console.log(config.get());
 

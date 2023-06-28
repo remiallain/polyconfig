@@ -3,3 +3,4 @@ server:
   headers:
     x-powered-by: Yaml-Daddy
   ping_response: up
+cooldownDuration: 300

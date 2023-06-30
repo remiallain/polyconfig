@@ -18,6 +18,9 @@ function PolyConfigHandlerEnv(vars, settings) {
         if (process_1.default.env[prefix + keyEnv]) {
             lodash_1.default.set(envConfig, key, vars[key].type(process_1.default.env[prefix + keyEnv]));
         }
+        else if (process_1.default.env[prefix + keyEnv.toUpperCase()]) {
+            lodash_1.default.set(envConfig, key, vars[key].type(process_1.default.env[prefix + keyEnv.toUpperCase()]));
+        }
     }
     return envConfig;
 }

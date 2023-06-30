@@ -12,6 +12,8 @@ export function PolyConfigHandlerEnv(vars: TPolyConfigVar, settings: { prefix?: 
         let keyEnv = key.split('.').join('_')
         if (process.env[prefix + keyEnv]) {
             _.set(envConfig, key, vars[key].type(process.env[prefix + keyEnv]))
+        } else if (process.env[prefix + keyEnv.toUpperCase()]) {
+            _.set(envConfig, key, vars[key].type(process.env[prefix + keyEnv.toUpperCase()]))
         }
     }
     return envConfig;

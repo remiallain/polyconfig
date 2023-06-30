@@ -1,6 +1,6 @@
 {
   "name": "polyconfig",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a polyglot configuration library",
   "repository": "https://github.com/remiallain/polyconfig.git",
   "author": "Rémi ALLAIN",
